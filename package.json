@@ -59,7 +59,7 @@
         "redux-thunk": "2.2.0",
         "regenerator": "0.11.0",
         "strangeluv-core": "^1.2.0",
-        "styled-components": "^2.1.1",
+        "styled-components": "^2.2.4",
         "tcomb-form-native": "0.6.10",
         "undefined": "0.1.0",
         "underscore": "1.8.3",
