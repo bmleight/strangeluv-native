@@ -2,18 +2,12 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/wswoodruff/strangeluv-native.svg)](https://greenkeeper.io/)
 
-## Notable differences between `strangeluv-native` and [`strangeluv`](https://github.com/BigRoomStudios/strangeluv)
-
-- `strangeluv-native` is a boilerplate for react-native. [`strangeluv`](https://github.com/BigRoomStudios/strangeluv) is a boilerplate for react-web.
-- You must rename the 'strangeluvnative' project before npm installing
-- `routes` in react-web are now referred to as `screens`.
-- Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
-
 ## > How I Learned to Stop Worrying and Love _React Native_
 
-Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) React/Redux starter kit. We've made it our own. We've also stolen most of this README from strangeluv. In here you'll find react-native, Redux, and a well-architected workflow that uses react-native's own Packager instead of Webpack. Follow the file-structure in this boilerplate to profit from well-thought, battle-proven code separation patterns used in [strangeluv](https://github.com/BigRoomStudios/strangeluv) for react-web.
+Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) React/Redux starter kit. We've adapted it to work with React Native. We've also stolen most of this README from strangeluv. In here you'll find react-native, Redux, and a well-architected workflow that uses react-native's own Packager instead of Webpack. Follow the file-structure in this boilerplate to profit from well-thought, battle-proven code separation patterns used in [strangeluv](https://github.com/BigRoomStudios/strangeluv) for react-web.
 
 ## Table of Contents
+1. [Differences to Strangeluv](#differences-to-strangeluv)
 1. [Toolset](#toolset)
 1. [Requirements](#requirements)
 1. [Getting Started](#getting-started)
@@ -23,6 +17,15 @@ Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) Rea
 1. [Recipes](#recipes)
 1. [Thank You](#thank-you)
 
+## Differences to Strangeluv
+
+Notable differences between `strangeluv-native` and [`strangeluv`](https://github.com/BigRoomStudios/strangeluv)
+
+- `strangeluv-native` is a boilerplate for react-native. [`strangeluv`](https://github.com/BigRoomStudios/strangeluv) is a boilerplate for react-web.
+- You must rename the 'strangeluvnative' project before npm installing
+- `routes` in react-web are now referred to as `screens`.
+- Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
+
 ## Toolset
 * [react](https://github.com/facebook/react)
 * [react-native](https://github.com/facebook/react-native)
@@ -31,11 +34,6 @@ Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) Rea
 * [styled-components](https://github.com/styled-components/styled-components)
 * [babel](https://github.com/babel/babel)
 * [eslint](http://eslint.org)
-
-## Requirements
-```
-* react-native `0.44.1`
-```
 
 ## Getting Started
 
@@ -54,8 +52,7 @@ $ grep -e 'strangeluvnative' -rl . | xargs sed -i '' 's/strangeluvnative/mynewpr
 # a better find-and-replace one-liner or short script for this, that'd be welcome! =)
 
 $ npm run fresh-install
-# Make sure to answer "n to keep your version" when you're prompted with ".babelrc has changed in the new version.
-Do you want to keep your .babelrc or replace it with the latest version?" after running fresh-install
+# Make sure to answer "n to keep your version" when you're prompted with ".babelrc has changed in the new version. Do you want to keep your .babelrc or replace it with the latest version?" after running fresh-install
 
 $ npm run dev     # Compile and launch to iOS simulator
 ```
@@ -92,7 +89,6 @@ Note the [nestable `screens/`](https://github.com/davezuko/react-redux-starter-k
 │   ├── components/          # Reusable UI-only (dumb/stateless) components
 │   ├── containers/          # Reusable container (smart/stateful) components
 │   ├── navigators/          # Contains the app's main navigator
-│   ├── static/              # Static assets (not imported anywhere in source code)
 │   ├── styles/              # Application-wide styles
 │   ├── wiring/              # Wiring between Redux and the app
 │   └── screens/             # Main screen definitions and async split points
@@ -169,8 +165,8 @@ We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding f
 ### Developer Tools
 - You get Redux dev tools inside react-native's "native" debugger! To enable remote debugging, open the menu once inside the app via Cmd+D, etc. and hit "Debug JS Remotely".
 
-#### Works with 
-- [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and 
+#### Works with
+- [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and
 - [remote-redux-devtools-on-debugger](https://github.com/jhen0409/remote-redux-devtools-on-debugger)
 - HMR support for reducers! Your reducers will update without reloading if you've enabled hot module reloading.
 
@@ -178,7 +174,7 @@ We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding f
 You can require the top-level folders like `require(containers/App);` because of the setup in `.babelrc`.
 
 ### Routing
-We use `react-navigation` 
+We use `react-navigation`
 [navigator definitions](https://reactnavigation.org/docs/navigators/stack#StackNavigatorConfig) and
 [route definitions](https://reactnavigation.org/docs/navigators/stack#RouteConfigs) (`<route>/index.js`)
 
